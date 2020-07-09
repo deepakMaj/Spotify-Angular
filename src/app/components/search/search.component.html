@@ -1,0 +1,73 @@
+<div class="wrapper">
+  <div class="ui grid">
+    <div class="three wide column"></div>
+    <div class="thirteen wide column">
+      <app-navbar (searchData)="getSearch($event)"></app-navbar>
+      <div class="searchTitle" *ngIf="searchTracks === null || searchAlbums === null || searchPlaylists === null || searchArtists === null">
+        <h2>Search for Artists, Songs and Albums...</h2>
+      </div>
+      <h1 *ngIf="searchTracks !== null">Songs</h1>
+      <div class="ui grid" *ngIf="searchTracks !== null">
+        <div class="three wide column" *ngFor="let track of searchTracks; let i=index">
+          <div class="ui card" *ngIf="i < 10">
+            <img [src]="track.album.images[0].url">
+            <div class="desc">
+              <h3 *ngIf="track.name.length <= 16">{{ track.name }}</h3>
+              <h3 *ngIf="track.name.length > 16">{{ track.name.substring(0, 13) }}...</h3>
+              <h4 *ngFor="let artist of track.album.artists">
+                <h4 *ngIf="artist.name.length <= 16"><a class="artist" routerLink="/artist/{{ artist.id }}">{{ artist.name }}</a></h4>
+                <h4 *ngIf="artist.name.length > 16"><a class="artist" routerLink="/artist/{{ artist.id }}">{{ artist.name.substring(0,13) }}...</a></h4>
+              </h4>
+              <div class="icon">
+                <button (click)="onClickPlay(track.id)" class="circular ui positive icon button"><i class="play icon"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <h1 *ngIf="searchArtists !== null">Artists</h1>
+      <div class="ui grid" *ngIf="searchArtists !== null">
+        <div class="three wide column" *ngFor="let artist of searchArtists; let i=index">
+          <div class="ui card" *ngIf="i < 10 && artist.images[0].url !== null">
+            <img style="border-radius: 50%;" [src]="artist.images[0].url">
+            <div class="desc">
+              <h3 *ngIf="artist.name.length <= 16"><a class="name" routerLink="/artist/{{ artist.id }}">{{ artist.name }}</a></h3>
+              <h3 *ngIf="artist.name.length > 16"><a class="name" routerLink="/artist/{{ artist.id }}">{{ artist.name.substring(0, 13) }}...</a></h3>
+              <h4>Artist</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+      <h1 *ngIf="searchAlbums !== null">Albums</h1>
+      <div class="ui grid" *ngIf="searchAlbums !== null">
+        <div class="three wide column" *ngFor="let album of searchAlbums; let i=index">
+          <div class="ui card" *ngIf="i < 10">
+            <img [src]="album.images[0].url">
+            <div class="desc">
+              <h3 *ngIf="album.name.length <= 16"><a class="name" routerLink="/album/{{ album.id }}">{{ album.name }}</a></h3>
+              <h3 *ngIf="album.name.length > 16"><a class="name" routerLink="/album/{{ album.id }}">{{ album.name.substring(0, 13) }}...</a></h3>
+              <h4 *ngFor="let artist of album.artists">
+                <h4 *ngIf="artist.name.length <= 16"><a class="artist" routerLink="/artist/{{ artist.id }}">{{ artist.name }}</a></h4>
+                <h4 *ngIf="artist.name.length > 16"><a class="artist" routerLink="/artist/{{ artist.id }}">{{ artist.name.substring(0,13) }}...</a></h4>
+              </h4>
+            </div>
+          </div>
+        </div>
+      </div>
+      <h1 *ngIf="searchPlaylists !== null">Playlists</h1>
+      <div class="ui grid" *ngIf="searchPlaylists !== null">
+        <div class="three wide column" *ngFor="let playlist of searchPlaylists; let i=index">
+          <div class="ui card" *ngIf="i < 10">
+            <img [src]="playlist.images[0].url">
+            <div class="desc">
+              <h3 *ngIf="playlist.name.length <= 16"><a class="name" routerLink="/playlist/{{ playlist.id }}">{{ playlist.name }}</a></h3>
+              <h3 *ngIf="playlist.name.length > 16"><a class="name" routerLink="/playlist/{{ playlist.id }}">{{ playlist.name.substring(0, 13) }}...</a></h3>
+              <h4 *ngIf="playlist.description.length <= 35">{{ playlist.description }}</h4>
+              <h4 *ngIf="playlist.description.length > 35">{{ playlist.description.substring(0,35) }}...</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,25 @@
+<div class="ui grid">
+  <div class="three wide column"></div>
+  <div class="thirteen wide column">
+    <div class="ui divider" style="margin: 0;"></div>
+    <gs-player *ngIf="angularTokenService.userSignedIn() && navbarService.visible" [files]="files" [playerTheme]="playerTheme">
+    </gs-player>
+    <footer *ngIf="!angularTokenService.userSignedIn() && navbarService.visible">
+      <div class="seg">
+        <h4>Spotify<small> &copy; </small>2020</h4>
+        <button class="ui circular facebook icon button" style="margin-right: 2vh;">
+          <i class="facebook icon"></i>
+        </button>
+        <button class="ui circular twitter icon button">
+          <i class="twitter icon"></i>
+        </button>
+        <button class="ui circular linkedin icon button">
+          <i class="linkedin icon"></i>
+        </button>
+        <button class="ui circular google plus icon button">
+          <i class="google plus icon"></i>
+        </button>
+      </div>
+    </footer>
+  </div> 
+</div>

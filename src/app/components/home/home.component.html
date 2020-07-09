@@ -1,0 +1,49 @@
+<div class="wrapper">
+  <div class="ui grid" *ngIf="showLoading">
+    <div class="three wide column"></div>
+    <div class="thirteen wide column">
+      <div class="loading">
+        <img src="../../../assets/loading.svg">
+      </div>
+    </div>
+  </div>
+  <div class="ui grid" *ngIf="!showLoading">
+    <div class="three wide column"></div>
+    <div class="thirteen wide column"> 
+      <h1>Top Playlists</h1>
+      <div class="ui grid">
+        <div class="three wide column" *ngFor="let playlist of playlists">
+          <div class="ui card">
+            <img class="img" [src]="playlist.images[0].url">
+            <div class="desc">
+              <h3 *ngIf="playlist.name.length <= 16"><a class="playlist" routerLink="/playlist/{{ playlist.id }}">{{ playlist.name }}</a></h3>
+              <h3 *ngIf="playlist.name.length > 16"><a class="playlist" routerLink="/playlist/{{ playlist.id }}">{{ playlist.name.substring(0, 13) }}...</a></h3>
+              <h4 *ngIf="playlist.description.length <= 50" id="desc">{{ playlist.description }}</h4>
+              <h4 *ngIf="playlist.description.length > 50" id="desc">{{ playlist.description.substring(0, 47)}}...</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+      <h1>New Releases</h1>
+      <div class="ui grid" >
+        <div class="three wide column" *ngFor="let album of albums">
+          <div class="ui card">
+            <img class="img" [src]="album.images[0].url">
+            <div class="desc">
+              <h3 style="font-size: 17px;" *ngIf="album.name.length <= 16">
+                <a class="album" routerLink="/album/{{ album.id }}">{{ album.name }}</a></h3>
+              <h3 style="font-size: 17px;" *ngIf="album.name.length > 16">
+                <a class="album" routerLink="/album/{{ album.id }}">{{ album.name.substring(0, 13) }}...</a></h3>
+              <h4 *ngIf="album.artists.length === 1">
+                <a class="artist" routerLink="/artist/{{ album.artists[0].id }}">{{ album.artists[0].name }}</a></h4>
+              <span *ngIf="album.artists.length > 1">
+                <h4 *ngFor="let artist of album.artists" style="margin-right: 5px;">
+                  <a class="artist" routerLink="/artist/{{ artist.id }}">{{ artist.name }}</a></h4>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> 
+</div>

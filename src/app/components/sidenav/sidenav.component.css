@@ -1,0 +1,59 @@
+.ui.sidebar.menu .ui.item{
+  margin-bottom: 30px;
+}
+
+.ui.inverted.menu .item, .ui.inverted.menu .item>a:not(.ui) {
+  color: white;
+}
+
+h4:hover{
+  color: white;
+}
+
+strong{
+  font-weight: 600;
+}
+
+.ui.sidebar.menu .item{
+  background-color: transparent;
+  margin-left: 10px;
+  margin-right: 15px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+.ui.sidebar.menu .active-link{
+  background-color: #1B1C1D;
+  border-radius: 1vh !important;
+  color: white;
+}
+
+small{
+  font-size: 10px;
+}
+
+h1{
+  font-weight: 600;
+}
+
+h4{
+  margin-left: 2vh;
+  color: #ADA9A9;
+}
+
+i{
+  margin-right: 2vh;
+  font-size: x-large;
+}
+
+.ui.menu .item>img:not(.ui) {
+  width: 3.5em;
+  margin-right: 0.5vh;
+}
+
+.ui.sidebar{
+  background: linear-gradient(rgb(0, 0, 0), rgb(19, 15, 15));
+  width: 39.85vh;
+}

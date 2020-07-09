@@ -1,0 +1,108 @@
+h1{
+  font-size: 5vh;
+  font-weight: 900;
+  color: white;
+  margin-top: 4vh;
+  margin-left: 5vh;
+}
+
+
+h2{
+  font-size: 10vh;
+  font-weight: 900;
+  color: rgba(230, 225, 225, 0.89);
+}
+
+.searchTitle, .loading{
+  margin-top: 28vh;
+  margin-left: 15vh;
+}
+.wrapper{
+  min-height: 100%;
+}
+
+button{
+  float: right;
+}
+
+.ui.button{
+  margin-bottom: 10px;
+}
+
+.ui.cards{
+  margin-top: 2.4vh;
+  margin-left: 5vh;
+  padding: 3.3vh;
+  box-shadow: none;
+  height: 40vh;
+  width: 28vh;
+  background-color: rgba(53, 51, 51, 0.774);
+}
+
+.artist:hover{
+  text-decoration: underline;
+}
+
+.name, .name:hover{
+  color: white;
+}
+
+.artist, .artist:hover{
+  color: rgba(148, 142, 142, 0.801);
+}
+
+.ui.result{
+  margin-top: 2.4vh;
+  margin-left: 5vh;
+  padding: 3.3vh;
+  box-shadow: none;
+  height: 40vh;
+  width: 40vh;
+  background-color: rgba(53, 51, 51, 0.774);
+}
+
+.ui.card{
+  margin-top: 2.4vh;
+  margin-left: 5vh;
+  padding: 3.3vh;
+  box-shadow: none;
+  border-radius: 1.7vh;
+  height: 42vh;
+  width: 28vh;
+  background-color: rgba(53, 51, 51, 0.774);
+}
+
+img{
+  height: 21vh;
+  width: 21vh;
+}
+
+.icon{
+  float: right;
+  margin-bottom: 2vh;
+}
+
+.desc{
+  margin-top: 2vh;
+  margin-bottom: 2vh;
+  display: inline-block;
+}
+
+h4{
+  color: rgba(148, 142, 142, 0.801);
+  font-size: 1.7vh;
+  margin: 0;
+  display: inline-block;
+  padding: 0;
+}
+
+h3{
+  margin: 0;
+  padding-top: 8px;
+  padding-bottom: 12px;
+  letter-spacing: 0.5px;
+  color: whitesmoke;
+  font-size: 16px;
+  font-weight: 900;
+}
+

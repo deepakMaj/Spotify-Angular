@@ -1,0 +1,80 @@
+<div *ngIf="isVisible" class="body">
+  <div class="decorate">
+    <img src="../../../assets/spotify.png" height="60vh">
+    <h1 style="display: inline-block;">Spotify<span>&reg;</span></h1>
+  </div>
+  <div *ngIf="isVisible" class="ui container">
+    <div class="ui grid" style="justify-content: center;">
+      <div class="eight wide column">
+        <flash-messages></flash-messages>
+        <form class="ui large form" #signupForm="ngForm" (ngSubmit)="onSignupClick(signupForm)">
+          <h2>Sign up for free to start listening.</h2>
+          <div class="field" [ngClass]="{'error': email.value === '' && email.touched}">
+            <label>What's your email?</label>
+            <input 
+              type="text" 
+              name="email" 
+              placeholder="Enter your email."
+              #email="ngModel"
+              [(ngModel)]="user.email"
+              required
+              pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?"
+            >
+            <div *ngIf="email.value === '' && email.touched" class="invalid">Email is required</div>
+            <div *ngIf="email.errors?.pattern" class="invalid">Email is invalid</div>
+          </div>
+          <div class="field" [ngClass]="{'error': emailAgain.value === '' && emailAgain.touched}">
+            <label>Confirm your email</label>
+            <input 
+              type="text" 
+              name="emailAgain" 
+              placeholder="Enter your email again."
+              #emailAgain="ngModel"
+              [(ngModel)]="user.emailAgain"
+              required
+              pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?"
+            >
+            <div *ngIf="emailAgain.value === '' && emailAgain.touched" class="invalid">Email is required</div>
+            <div *ngIf="emailAgain.errors?.pattern" class="invalid">Email is invalid</div>
+            <div *ngIf="emailAgain.value !== email.value" class="invalid">Email does not match</div>
+          </div>
+          <div class="field" [ngClass]="{'error': password.value === '' && password.touched}">
+            <label>Create a password</label>
+            <input 
+              type="password" 
+              name="password" 
+              placeholder="Create a password."
+              #password="ngModel"
+              [(ngModel)]="user.password"
+              required
+              minlength="6"
+            >
+            <div *ngIf="password.value === '' && password.touched" class="invalid">Password is required</div>
+            <div *ngIf="password.errors?.minlength" class="invalid">Must be atleast 6 characters</div>
+          </div>
+          <div class="field" [ngClass]="{'error': name.value === '' && name.touched}">
+            <label>What should we call you?</label>
+            <input 
+              type="text" 
+              name="name" 
+              placeholder="Enter your profile name."
+              #name="ngModel"
+              [(ngModel)]="user.name"
+              required
+              minlength="4"
+            >
+            <div *ngIf="name.value === '' && name.touched" class="invalid">Password is required</div>
+            <div *ngIf="name.errors?.minlength" class="invalid">Must be atleast 6 characters</div>
+            <div *ngIf="!name.errors" class="tag" style="color: rgba(24, 24, 24);">This appears on your profile.</div>
+          </div>
+          <h5 style="text-align: center;">By clicking on Sign up, you agree to Spotify's Terms and Conditions of Use.</h5>
+          <div class="ui grid login" style="justify-content: center;">
+            <button (click)="addLoading()" id="signup" [disabled]="email.errors || emailAgain.errors || password.errors || name.errors" class="ui button positive" type="submit">SIGN UP</button>
+          </div>
+      </form>
+      <div class="divider"></div>
+      <h4>Have an account?<a routerLink="/login"> Log in</a></h4>
+    </div>
+  </div>
+ </div>
+<div>

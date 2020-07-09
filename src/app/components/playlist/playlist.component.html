@@ -1,0 +1,56 @@
+<div class="wrapper">
+  <div class="ui grid">
+    <div class="three wide column"></div>
+    <div class="thirteen wide column">
+      <div class="ui grid" *ngIf="showLoading">
+        <div class="three wide column"></div>
+        <div class="thirteen wide column">
+          <div class="loading">
+            <img src="../../../assets/loading.svg">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="ui grid" *ngIf="!showLoading">
+    <div class="three wide column"></div>
+    <div class="thirteen wide column">
+      <div class="segment">
+        <div class="ui grid">
+          <div class="four wide column">
+            <img class="albumImg" [src]="playlist.images[0].url">
+          </div>
+          <div class="twelve wide column">
+            <h5>Playlist</h5>
+            <h1>{{ playlist.name }}</h1>
+            <h3 class="desc">{{ playlist.description }}</h3>
+            <div class="details">
+              <span class="artist">
+                <ul class="name">
+                  <li><span><a class="albumArtist">{{ playlist.owner.display_name }}</a></span></li>
+                </ul>
+              </span>
+              <ul class="date">
+                <li><span>{{ followers }} likes</span></li>
+                <li><span>{{ fullTime }}</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="ui inverted divider"></div>
+      <div class="detail-segment">
+        <div class="track" *ngFor="let track of playlist.tracks_cache">
+          <i class="play icon" (click)="onClickPlay(track.id)"></i>
+          <h3 class="trackName">{{ track.name }}</h3>
+          <span class="time">{{ track.duration_ms }}</span>
+          <div class="artists">
+            <div *ngFor="let artist of track.artists" class="artistName">
+              <h4 class="link"><a class="alink" routerLink="/artist/{{ artist.id }}">{{ artist.name}}</a></h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

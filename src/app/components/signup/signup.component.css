@@ -1,0 +1,78 @@
+.decorate{
+  text-align: center;
+  margin-bottom: 13px;
+}
+
+.body{
+  background: white;
+}
+
+span{
+  vertical-align: top;
+  font-size: 1rem;
+}
+
+.tag{
+  font-size: 15px;
+  font-weight: 800;
+  line-height: 20px;
+  letter-spacing: 0.25px;
+  margin-top: 8px;
+}
+
+h1{
+  font-weight: 800;
+  font-size: 6vh;
+  vertical-align: 3vh;
+  margin-left: 5px;
+}
+
+h2{
+  text-align: center;
+  font-size: 35px;
+  margin-bottom: 40px;
+  font-weight: bolder;
+}
+
+hr{
+  border-bottom-color: #DBDBDB;
+  opacity: 50%;
+}
+
+h4{
+  font-weight: bold;
+  font-size: 1.2rem;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+form{
+  margin-top: 20px;
+}
+
+.divider {
+  border-top: 1px solid #d9dadc;
+  display: block;
+  line-height: 1px;
+  margin: 12px 0;
+  margin-bottom: 30px;
+  position: relative;
+  text-align: center;
+}
+
+.ui.button.positive{
+  margin-top: 30px;
+  margin-bottom: 40px;
+  border-radius: 25px;
+  padding: 15px 17vh 15px 17vh;
+  font-size: 16px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.invalid{
+  color: #A42821;
+  margin-top: 5px;
+  font-weight: 700;
+  font-size: 15px;
+}

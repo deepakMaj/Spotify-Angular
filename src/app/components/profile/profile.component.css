@@ -1,0 +1,65 @@
+.ui.circular.image{
+  height: 35vh;
+  width: 35vh;
+  margin-top: 10vh;
+  margin-left: 5vh;
+  margin-bottom: 3vh;
+  display: inline-block;
+  object-fit: cover;
+  box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.2), 0 12px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+img{
+  color: white;
+}
+
+.ui.grid>.column:not(.row) {
+  padding-bottom: 0;
+}
+
+.thumbs.up.icon{
+  color: white;
+}
+
+.detail-segment{
+  margin-bottom: 20vh;
+}
+
+h4{
+  margin-left: 5vh;
+  font-size: 3.5vh;
+  color: white;
+}
+
+a{
+  font-size: 3vh;
+  margin-left: 1vh;
+}
+
+p{
+  color: #a5a59a;
+  margin-left: 5vh;
+  font-size: 3vh;
+  margin-top: 5vh;
+  letter-spacing: 1px;
+  line-height: 5vh;
+  font-weight: bolder;
+}
+
+.ui.divider{
+  margin-top: 10px;
+}
+
+.segment{
+  margin: 0;
+  padding: 0;
+}
+
+h1{
+  font-size: 12vh;
+  margin-left: 10px;
+  font-weight: bolder;
+  color: white;
+  vertical-align: text-top;
+  display: inline-block;
+}

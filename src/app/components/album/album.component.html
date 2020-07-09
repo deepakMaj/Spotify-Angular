@@ -1,0 +1,53 @@
+<div class="wrapper">
+  <div class="ui grid" *ngIf="!showLoading">
+    <div class="three wide column"></div>
+    <div class="thirteen wide column">
+      <div class="segment">
+        <div class="ui grid">
+          <div class="four wide column">
+            <img class="albumImg" [src]="album.images[0].url">
+          </div>
+          <div class="twelve wide column">
+            <h5>Album</h5>
+            <h1>{{ album.name }}</h1>
+            <div class="details">
+              <span *ngFor="let artist of album.artists" class="artist">
+                <ul class="name">
+                  <li><span><a class="albumArtist" routerLink="/artist/{{ artist.id }}">{{ artist.name }}</a></span></li>
+                </ul>
+              </span>
+              <ul class="date">
+                <li><span style="margin-right: 2vh;">{{ date }}</span></li>
+                <li><span>{{ fullTime }}</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="ui inverted divider"></div>
+      <div class="detail-segment">
+        <div class="track" *ngFor="let track of album.tracks_cache">
+          <i class="play icon" (click)="onClickPlay(track.id)"></i>
+          <h3 class="trackName">{{ track.name }}</h3>
+          <span class="time">{{ track.duration_ms }}</span>
+          <div class="artists">
+            <div *ngFor="let artist of track.artists" class="artistName">
+              <h4 class="link"><a class="alink" routerLink="/artist/{{ artist.id }}">{{ artist.name}}</a></h4>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="copyright">
+        <h6>{{ album.copyrights[0].text }}</h6>
+      </div>
+    </div>
+  </div>
+  <div class="ui grid" *ngIf="showLoading">
+    <div class="three wide column"></div>
+    <div class="thirteen wide column">
+      <div class="loading">
+        <img src="../../../assets/loading.svg">
+      </div>
+    </div>
+  </div>
+</div>

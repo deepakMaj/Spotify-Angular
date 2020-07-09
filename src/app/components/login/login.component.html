@@ -1,0 +1,58 @@
+<div *ngIf="isVisible" class="body">
+  <div class="decorate">
+    <img src="../../../assets/spotify.png" height="80vh">
+    <h1 style="display: inline-block;">Spotify<span>&reg;</span></h1>
+  </div>
+  <hr>
+  <div *ngIf="isVisible" class="ui container">
+    <div class="ui grid" style="justify-content: center;">
+      <div class="eight wide column">
+        <flash-messages></flash-messages>
+        <form class="ui large form" #loginForm="ngForm" (ngSubmit)="onLoginClick(loginForm)">
+          <h4>To continue, log in to Spotify.</h4>
+          <div class="ui grid facebook" style="justify-content: center;">
+            <button (click)="onAuthClick()" type="button" class="ui button facebook"><i class="facebook icon"></i> Continue with Facebook</button>
+          </div>
+          <div class="divider">
+            <strong class="divider-title">OR</strong>
+          </div>
+          <div class="field" [ngClass]="{'error': email.value === '' && email.touched}">
+            <label>Email</label>
+            <input 
+              type="text" 
+              name="email" 
+              placeholder="Email address"
+              required
+              #email= "ngModel"
+              [(ngModel)]="user.email"
+              pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?"
+            >
+            <div *ngIf="email.value === '' && email.touched" class="invalid">Email is required</div>
+            <div *ngIf="email.errors?.pattern" class="invalid">Email is invalid</div>
+          </div>
+          <div class="field" [ngClass]="{'error': password.value === '' && password.touched}">
+            <label>Password</label>
+            <input 
+              type="password" 
+              name="password" 
+              placeholder="Password"
+              #password="ngModel"
+              [(ngModel)]="user.password"r
+              required
+            >
+            <div *ngIf="password.value === '' && password.touched" class="invalid">Password is required</div>
+          </div>
+          <div class="ui grid login" style="justify-content: center;">
+            <button (click)="addLoading()" id="login" [disabled]="email.errors || password.errors" class="ui button positive" type="submit">LOG IN</button>
+          </div>
+      </form>
+      <div class="divider"></div>
+      <h4>Don't have an account?</h4>
+      <div class="ui grid" style="justify-content: center;">
+        <a routerLink="/signup" class="ui button signup">SIGN UP FOR SPOTIFY</a>
+      </div>
+      <div class="divider"></div>
+      <p><small>If you click "Log in with Facebook" and are not a Spotify user, you will be registered and you agree to Spotify's Terms & Conditions and Privacy Policy.</small></p>
+    </div>
+  </div>
+</div> 

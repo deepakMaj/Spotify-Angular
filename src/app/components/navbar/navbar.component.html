@@ -1,0 +1,40 @@
+<div class="ui borderless large inverted menu">
+  <div *ngIf="router.url === '/search'" class="item">
+    <div class="ui search" style="margin-left: 20px;">
+      <div class="ui icon input">
+        <i class="search icon"></i>
+        <input (keyup)="search($event.target.value)" class="prompt" type="text" placeholder="Search for Artists and Songs">
+      </div>
+    </div>    
+  </div>
+  <div class="right menu">
+    <a *ngIf="!angularTokenService.userSignedIn()" routerLink="/signup" class="ui item">
+      <button class="ui secondary animated button">
+        <div class="visible content"><h5>SIGN UP</h5></div>
+        <div class="hidden content">
+          <i class="spotify icon"></i>
+        </div>
+      </button>
+    </a>
+    <a *ngIf="!angularTokenService.userSignedIn()" routerLink="/login" class="ui item" style="margin-right: 20px;">
+      <button class="ui positive animated button">
+        <div class="visible content"><h5>LOG IN</h5></div>
+        <div class="hidden content">
+          <i class="user icon"></i>
+        </div>
+      </button>
+    </a>
+    <a [hidden]="!angularTokenService.userSignedIn()">
+      <div class="ui labeled icon floating dropdown button">
+        <i class="user icon"></i>
+        <span class="text">{{ user.name }}</span><span><i class="dropdown icon"></i></span>
+        <div class="menu">
+          <a routerLink="/account" class="item">Account</a>
+          <a routerLink="/profile" class="item">Profile</a>
+          <div class="ui divider"></div>
+          <div class="item" (click)="onSignOut()">Logout</div>
+        </div>
+      </div>
+    </a>
+  </div>
+</div>

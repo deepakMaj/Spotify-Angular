@@ -1,0 +1,165 @@
+.albumImg{
+  height: 38vh;
+  width: 38vh;
+  margin-top: 10vh;
+  margin-left: 5vh;
+  margin-bottom: 3vh;
+  display: inline-block;
+  box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.2), 0 12px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+ul{
+  display: inline-block;
+}
+
+.details{
+  margin-left: 5vh;
+}
+
+.albumArtist, .name{
+  list-style: disc;
+  padding-inline-start: 2px;
+  padding-inline-end: 0;
+  color: white;
+  font-size: 16px;
+  font-weight: 900;
+}
+
+i, .trackName, .link{
+  display: inline-block;
+}
+
+i{
+  color:white;
+  margin-left: 3vh;
+}
+
+.artistName{
+  display: inline;
+  margin-left: -4vh;
+}
+
+.alink{
+  font-size: 2vh;
+  color: rgb(148, 147, 147);
+}
+
+.alink:hover{
+  color: white;
+}
+
+.time{
+  margin-top: 3vh;
+  margin-right: 4vh;
+  color: rgb(148, 147, 147);
+  float: right;
+}
+
+.track{
+  margin-left: 5vh;
+  margin-right: 5vh;
+}
+
+.artists{
+  margin-left: 7vh;
+  margin-top: 0;
+}
+
+.track:hover{
+  background-color: #2e2d2dfa;
+}
+
+a:hover{
+  text-decoration: underline;
+}
+
+.date{
+  list-style: disc;
+  display: inline-flex;
+  padding-inline-start: 14px;
+  color: rgba(182, 176, 176, 0.952);
+  font-size: 16px;
+  font-weight: 500;
+}
+
+li span {
+  position: relative;
+  left: -9px;
+}
+
+li{
+  margin-left: 1vh;
+}
+
+.artist{
+  display: inline-block;
+  padding-inline-start: 10px;
+}
+
+.ui.grid>.column:not(.row) {
+  padding-bottom: 0;
+  padding-top: 0;
+}
+
+.loading{
+  margin-top: 45vh;
+  margin-left: 75vh;
+}
+
+h3{
+  margin-left: 2vh;
+  font-size: 2.8vh;
+  font-weight: 300;
+  margin-top: 3vh;
+  margin-bottom: 0;
+  color: white;
+}
+
+h4{
+  margin-left: 5vh;
+  font-size: 3.5vh;
+  color: white;
+}
+
+.segment{
+  margin-top: 4.4vh;
+  background: linear-gradient(rgb(20, 17, 17), rgb(26, 26, 29));
+  padding: 0;
+}
+
+.detail-segment{
+  margin-top: 8vh;
+}
+
+.copyright{
+  margin-top: 10vh;
+  margin-left: 4vh;
+}
+
+h6{
+  color: rgba(182, 176, 176, 0.952);;
+  font-size: 1.8vh;
+}
+
+.wrapper{
+  min-height: 100%;
+}
+
+h5{
+  color: white;
+  font-size: 2.5vh;
+  font-weight: 900;
+  margin-left: 3vh;
+  margin-top: 15vh;
+  margin-bottom: 2vh;
+}
+
+h1{
+  font-size: 9vh;
+  margin-top: 0;
+  line-height: 8vh;
+  font-weight: 900;
+  color: white;
+  margin-left: 3vh;
+  display: inline-block;
+}

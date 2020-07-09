@@ -1,0 +1,60 @@
+.ui.borderless.menu{
+  height: 10vh;
+  background-color: #0b0b0bec !important;
+  width: 100%;
+}
+
+.ui.borderless.menu.scrolled {
+  background-color: #0b0b0bdc !important;
+  transition: background-color 200ms linear;
+}
+
+.ui.borderless.menu .right.menu .ui.item{
+  background-color: transparent;
+}
+
+.ui.input>input {
+  max-width: 45vh;
+  width: 45vh;
+}
+
+
+.ui.button{
+  margin-top: 2vh;
+  height: 6vh;
+  border-radius: 25px;
+  margin-right: 4vh;
+}
+
+.ui.labeled.icon.button, .ui.labeled.icon.buttons .button{
+  position: relative;
+  padding-left: 7vh !important;
+  padding-right: 10px !important;
+}
+
+.ui.dropdown .menu>.divider {
+  margin: 0;
+}
+
+.ui.labeled.icon.button>.icon{
+  border-radius: 50%;
+}
+
+a.ui.item{
+  letter-spacing: 2px;
+}
+
+.signup:hover{
+  font-size: 15px;
+}
+
+.ui.menu .item{
+  padding: 8px;
+}
+
+button.ui.button{
+  background-color: white;
+  letter-spacing: 1px;
+  border-radius: 25px;
+  color: black;
+}

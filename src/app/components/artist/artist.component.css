@@ -1,0 +1,90 @@
+.wrapper{
+  min-height: 100%;
+  position: relative;
+  margin-top: 2vh;
+}
+
+.ui.grid{
+  margin-bottom: 2vh;
+}
+
+.albumImg{
+  height: auto;
+  width: 100%;
+  box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.2), 0 12px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+ul{
+  display: inline-block;
+}
+
+.details{
+  margin-left: 6vh;
+}
+
+i{
+  color:white;
+  margin-left: 3vh;
+}
+
+.date{
+  list-style: disc;
+  display: inline-flex;
+  padding-inline-start: 0;
+  color: rgb(231, 226, 226);
+  font-size: 16px;
+  font-weight: 500;
+}
+
+li span {
+  position: relative;
+  left: -9px;
+  font-size: 3vh;
+}
+
+li{
+  margin-left: 2vh;
+}
+
+.ui.grid>.column:not(.row) {
+  padding-bottom: 0;
+  padding-top: 0;
+}
+
+.loading{
+  margin-top: 45vh;
+  margin-left: 75vh;
+}
+
+.segment .text{
+  position: absolute;
+  margin: 0 auto;
+  top: 70%;
+}
+
+.segment{
+  background: linear-gradient(rgb(20, 17, 17), rgb(26, 26, 29));
+  padding: 0;
+  min-height: 100%;
+}
+
+h5{
+  font-size: 3vh;
+  font-weight: 500;
+  margin-left: 3vh;
+  color: white;
+}
+
+h1{
+  font-size: 18vh;
+  margin-top: 8vh;
+  margin-bottom: 10vh;
+  line-height: 8vh;
+  font-weight: 900;
+  color: white;
+  margin-left: 3vh;
+}
+
+.icon{
+  vertical-align: middle;
+}

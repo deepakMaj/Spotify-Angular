@@ -1,0 +1,78 @@
+<div class="ui grid">
+  <div class="three wide column"></div>
+  <div class="thirteen wide column" style="background-color: whitesmoke;margin-top: 15px;">
+    <article class="segment account">
+      <flash-messages></flash-messages>
+      <div class="header">Account overview</div>
+      <div class="ui container">
+        <table class="ui very basic table">
+          <tbody>
+            <tr>
+              <td style="color: gray;">Name</td>
+              <td>{{ user.name }}</td>
+            </tr>
+            <tr>
+              <td style="color: gray;">Email</td>
+              <td>{{ user.email }}</td>
+            </tr>
+            <tr>
+              <td style="color: gray;">Country</td>
+              <td>India</td>
+            </tr>
+            <tr>
+              <td style="color: gray;">Spotify Plan</td>
+              <td>Free</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="actions">
+        <button class="ui secondary button" (click)="disableUpdateForm()">
+          Cancel<i class="cross icon"></i>
+        </button>
+        <div class="ui positive right labeled icon button" (click)="enableUpdateForm()">
+          Update Password
+          <i class="pencil alternate icon"></i>
+        </div>
+      </div>
+      <div [hidden]="!isUpdateFormDisabled">
+        <div class="ui plan test ad" data-text="">
+          <h1>Spotify Plan: Free</h1>
+        </div>
+      </div>
+      <div class="ui segment" [hidden]="isUpdateFormDisabled">
+        <form class="ui form" #updateForm="ngForm" (ngSubmit)="onUpdateClick(updateForm)">
+          <div class="field" [ngClass]="{'error': password.value === '' && password.touched}">
+            <label>New Password</label>
+            <input 
+              type="text" 
+              name="password" 
+              placeholder="Enter new password"
+              #password="ngModel"
+              [(ngModel)]="user.password"
+              required
+              minlength="6"
+            >
+            <div *ngIf="password.value === '' && password.touched" class="invalid">Password is required</div>
+            <div *ngIf="password.errors?.minlength" class="invalid">Must be atleast 6 characters</div>
+          </div>
+          <div class="field" [ngClass]="{'error': passwordAgain.value === '' && passwordAgain.touched}">
+            <label>Confirm New Password</label>
+            <input 
+              type="text" 
+              name="passwordAgain" 
+              placeholder="Enter new password again"
+              #passwordAgain="ngModel"
+              [(ngModel)]="user.password"
+              required
+              minlength="6"
+            >
+            <div *ngIf="passwordAgain.value === '' && passwordAgain.touched" class="invalid">Password is required</div>
+            <div *ngIf="passwordAgain.errors?.minlength" class="invalid">Must be atleast 6 characters</div>
+          </div>
+          <button [disabled]="password.errors || passwordAgain.errors" class="ui secondary button" type="submit">Update</button>
+        </form>
+      </div>
+    </article>
+  </div>
+</div>

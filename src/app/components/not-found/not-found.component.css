@@ -1,0 +1,22 @@
+.ui.grid{
+  justify-content: center;
+  margin-top:30vh; 
+}
+
+h1{
+  color: white;
+  font-size: 14vh;
+  text-align: center;
+  margin-left:30vh;
+}
+
+.wrapper{
+  min-height: 100%;
+}
+
+h4{
+ text-align: center;
+ font-size: 6vh;
+ color: #ff5f55;
+ margin-left: 35vh;
+}
